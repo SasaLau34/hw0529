@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>台南景点介紹</title>
+    <style>
+        body {
+            background-color: #f5e1ce; /* 奶茶色背景 */
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        button {
+            margin-right: 10px;
+            padding: 5px 10px;
+            font-size: 16px;
+            background-color: #d9bfa9;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #c6a68c;
+            }
+
+        h1 {
+            color: #5e3b2c;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>台南景点</h1>
+
+        <button onclick="showTainan('chimei')">1. 奇美博物館</button>
+        <button onclick="showTainan('anping')">2. 安平老街</button>
+
+        <div id="chimei" class="content active">
+            <img src="https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_2574_5.jpg" alt="奇美博物館圖片">
+            <p>
+                奇美博物館位於台南市仁德區，鄰近台南都會公園，距離市區約15分鐘車程。
+                由奇美集團創辦人許文龍於1992年創立，2015年重新開館，成為台灣最具規模的私人博物館之一。
+            </p>
+        </div>
+
+        <div id="anping" class="content">
+            <img src="https://photo.travelking.com.tw/scenery/DAD8B2BA-52C0-4F2D-A5A1-555CAAD5F041_e.jpg" alt="安平老街圖片">
+            <p>
+                安平老街（又稱延平老街）是台南最具歷史與人情味的景點之一，融合了荷蘭、西式洋樓與台灣傳統建築風格，是了解台南歷史文化的好地方。
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function showTainan(id) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const target = document.getElementById(id);
+            if (target) {
+                target.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
