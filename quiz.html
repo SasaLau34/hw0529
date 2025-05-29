@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>喜歡的飲料調查</title>
+    <style>
+        #result {
+            display: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>你喜歡喝什麼飲料？</h3>
+    <form id="drinkForm">
+        <input type="radio" name="drink" value="珍珠奶茶"> 珍珠奶茶<br>
+        <input type="radio" name="drink" value="焦糖瑪其朵咖啡"> 焦糖瑪其朵咖啡<br>
+        <input type="radio" name="drink" value="巧克力可可"> 巧克力可可<br>
+        <input type="radio" name="drink" value="旺來香果茶"> 旺來香果茶<br><br>
+
+        <button type="button" onclick="confirmAndShowResult()">送出</button>
+        <button type="reset" onclick="hideResult()">重設</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function confirmAndShowResult() {
+            const drinks = document.getElementsByName("drink");
+            let selected = "";
+            for (let i = 0; i < drinks.length; i++) {
+                if (drinks[i].checked) {
+                    selected = drinks[i].value;
+                    break;
+                }
+            }
+
+            if (selected === "") {
+                alert("請先選擇一個飲料喔～");
+                return;
+            }
+
+            const isConfirm = confirm("你確定要送出「" + selected + "」嗎？");
+            if (isConfirm) {
+                alert("你選擇的飲料是：" + selected);
+            }
+        }
+
+        function hideResult() {
+            const result = document.getElementById("result");
+            result.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
