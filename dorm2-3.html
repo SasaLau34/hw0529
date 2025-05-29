@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h2 id="content">胡志明旅行</h2>
+    <button onclick="change()">点击变更内容</button>
+
+    <script>
+        function change() {
+            // 取得标签物件
+            let elem = document.querySelector("#content");
+
+            // 操作标签物件
+            elem.innerHTML = "New Content";
+            elem.style.fontSize = "30px"; // font-size: 30px;
+            elem.style.color = "blue";
+        }
+    </script>
+</body>
+</html>
